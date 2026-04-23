@@ -1,0 +1,13 @@
+body { background: #f4f7ff; color: #1f2a44; }
+.hero { background: linear-gradient(135deg, #4977f5, #3157d1); }
+.metric-card {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(37, 61, 127, .12);
+  padding: .9rem;
+  height: 100%;
+}
+.metric-card span { font-size: .75rem; text-transform: uppercase; color: #6f7faa; }
+.metric-card h3 { margin: .2rem 0 0; font-weight: 700; font-size: 1.1rem; }
+#tradeTable tbody tr { transition: all .15s ease-in-out; }
+#tradeTable tbody tr:hover { transform: translateY(-1px); }

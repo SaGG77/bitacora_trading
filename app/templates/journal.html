@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Journal | TradeMorfosis{% endblock %}
+{% block content %}
+<section class="hero rounded-4 p-4 text-white mb-4">
+  <h1 class="h3 mb-1">Trading Journal</h1>
+  <p class="mb-0">Panel central para revisar y registrar operaciones.</p>
+</section>
+
+{% include "partials/summary_cards.html" %}
+{% include "partials/trade_filters.html" %}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2 class="h5 mb-0">Operaciones</h2>
+  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tradeFormModal">Nuevo trade</button>
+</div>
+
+{% include "partials/trade_table.html" %}
+{% include "partials/trade_form_modal.html" %}
+{% include "partials/trade_detail_modal.html" %}
+{% endblock %}

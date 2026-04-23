@@ -1,0 +1,35 @@
+<div class="modal fade" id="tradeFormModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <form class="modal-content" method="post" action="{{ url_for('trades.save_trade') }}" id="tradeForm">
+      <div class="modal-header">
+        <h5 class="modal-title" id="tradeFormTitle">Nuevo trade</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        {{ form.hidden_tag() }}
+        <input type="hidden" name="trade_id" id="tradeId">
+        <div class="row g-2">
+          <div class="col-md-4">{{ form.fecha.label(class='form-label') }}{{ form.fecha(class='form-control', id='fecha') }}</div>
+          <div class="col-md-4">{{ form.hora.label(class='form-label') }}{{ form.hora(class='form-control', id='hora') }}</div>
+          <div class="col-md-4">{{ form.activo.label(class='form-label') }}{{ form.activo(class='form-control', id='activo') }}</div>
+          <div class="col-md-4">{{ form.direccion.label(class='form-label') }}{{ form.direccion(class='form-select', id='direccion') }}</div>
+          <div class="col-md-4">{{ form.tipo_entrada.label(class='form-label') }}{{ form.tipo_entrada(class='form-select', id='tipo_entrada') }}</div>
+          <div class="col-md-4">{{ form.lotaje.label(class='form-label') }}{{ form.lotaje(class='form-control', id='lotaje') }}</div>
+          <div class="col-md-4">{{ form.entrada.label(class='form-label') }}{{ form.entrada(class='form-control', id='entrada') }}</div>
+          <div class="col-md-4">{{ form.stop_loss.label(class='form-label') }}{{ form.stop_loss(class='form-control', id='stop_loss') }}</div>
+          <div class="col-md-4">{{ form.take_profit.label(class='form-label') }}{{ form.take_profit(class='form-control', id='take_profit') }}</div>
+          <div class="col-md-4">{{ form.salida.label(class='form-label') }}{{ form.salida(class='form-control', id='salida') }}</div>
+          <div class="col-md-4">{{ form.resultado_pips.label(class='form-label') }}{{ form.resultado_pips(class='form-control', id='resultado_pips') }}</div>
+          <div class="col-md-4">{{ form.resultado_dinero.label(class='form-label') }}{{ form.resultado_dinero(class='form-control', id='resultado_dinero') }}</div>
+          <div class="col-md-4">{{ form.emocion.label(class='form-label') }}{{ form.emocion(class='form-control', id='emocion') }}</div>
+          <div class="col-md-12">{{ form.comentario.label(class='form-label') }}{{ form.comentario(class='form-control', rows='2', id='comentario') }}</div>
+          <div class="col-md-12">{{ form.captura.label(class='form-label') }}{{ form.captura(class='form-control', id='captura') }}</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+        {{ form.submit(class='btn btn-primary') }}
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Stats | TradeMorfosis{% endblock %}
+{% block content %}
+<h1 class="h4 mb-3">Resumen rápido</h1>
+<div class="row g-3">
+  <div class="col-md-4"><div class="metric-card"><span>Profit total</span><h3>${{ summary.profit_total }}</h3></div></div>
+  <div class="col-md-4"><div class="metric-card"><span>Win rate</span><h3>{{ summary.win_rate }}%</h3></div></div>
+  <div class="col-md-4"><div class="metric-card"><span>Profit del mes</span><h3>${{ summary.monthly_profit }}</h3></div></div>
+</div>
+{% endblock %}

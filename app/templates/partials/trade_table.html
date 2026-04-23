@@ -1,0 +1,39 @@
+<div class="card shadow-sm p-3">
+  <div class="table-responsive">
+    <table class="table align-middle" id="tradeTable">
+      <thead>
+        <tr>
+          <th>Fecha</th><th>Hora</th><th>Activo</th><th>Dirección</th><th>Tipo</th><th>Pips</th><th>USD</th><th>Emoción</th><th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for t in trades %}
+        <tr data-fecha="{{ t.fecha }}" data-activo="{{ t.activo }}" data-direccion="{{ t.direccion }}" data-emocion="{{ t.emocion or '' }}" data-tipo="{{ t.tipo_entrada }}">
+          <td>{{ t.fecha }}</td>
+          <td>{{ t.hora.strftime('%H:%M') }}</td>
+          <td>{{ t.activo }}</td>
+          <td>{{ t.direccion }}</td>
+          <td>{{ t.tipo_entrada }}</td>
+          <td>{{ t.resultado_pips }}</td>
+          <td class="money {{ 'text-success' if (t.resultado_dinero or 0) > 0 else 'text-danger' }}">{{ t.resultado_dinero }}</td>
+          <td>{{ t.emocion or '-' }}</td>
+          <td class="d-flex gap-2">
+            <button class="btn btn-sm btn-outline-dark detail-btn" data-bs-toggle="modal" data-bs-target="#tradeDetailModal"
+              data-id="{{ t.id }}" data-comentario="{{ t.comentario or '' }}" data-captura="{{ t.captura or '' }}">Detalle</button>
+            <button class="btn btn-sm btn-outline-primary edit-btn" data-bs-toggle="modal" data-bs-target="#tradeFormModal"
+              data-id="{{ t.id }}" data-fecha="{{ t.fecha }}" data-hora="{{ t.hora.strftime('%H:%M') }}" data-activo="{{ t.activo }}"
+              data-direccion="{{ t.direccion }}" data-tipo_entrada="{{ t.tipo_entrada }}" data-lotaje="{{ t.lotaje }}" data-entrada="{{ t.entrada }}"
+              data-stop_loss="{{ t.stop_loss or '' }}" data-take_profit="{{ t.take_profit or '' }}" data-salida="{{ t.salida or '' }}"
+              data-resultado_pips="{{ t.resultado_pips or '' }}" data-resultado_dinero="{{ t.resultado_dinero or '' }}" data-emocion="{{ t.emocion or '' }}"
+              data-comentario="{{ t.comentario or '' }}" data-captura="{{ t.captura or '' }}">Editar</button>
+            <form method="post" action="{{ url_for('trades.delete_trade', trade_id=t.id) }}">
+              <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+              <button class="btn btn-sm btn-outline-danger">Borrar</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
