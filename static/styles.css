@@ -1,0 +1,37 @@
+body {
+    background: linear-gradient(180deg, #f0f4ff 0%, #f8fbff 100%);
+    color: #1f2a44;
+}
+
+.hero {
+    background: radial-gradient(circle at top right, #6ea8fe, #3457d5 65%);
+    color: #fff;
+}
+
+.metric-card {
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem;
+    min-height: 110px;
+    justify-content: center;
+    box-shadow: 0 10px 24px rgba(31, 42, 68, 0.08);
+}
+
+.metric-card span {
+    color: #5a6a92;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.metric-card h2 {
+    margin-top: .25rem;
+    margin-bottom: 0;
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+.table thead th {
+    font-size: .8rem;
+    text-transform: uppercase;
+    color: #5a6a92;
+}
