@@ -33,6 +33,11 @@
           </td>
         </tr>
         {% endfor %}
+        {% if not trades %}
+        <tr>
+          <td colspan="9" class="text-center text-muted py-4">No hay operaciones con esos filtros.</td>
+        </tr>
+        {% endif %}
       </tbody>
     </table>
   </div>

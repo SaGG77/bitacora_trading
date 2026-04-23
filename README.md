@@ -29,3 +29,26 @@ python app.py
 ```
 
 Abrir: `http://127.0.0.1:5000`
+
+## Subir cambios a GitHub
+
+```bash
+git add .
+git commit -m "Mejoras journal trading"
+git push origin <tu-rama>
+```
+
+## Descargar en tu PC
+
+Si no tienes el repo:
+
+```bash
+git clone <url-del-repo>
+cd <nombre-del-repo>
+```
+
+Si ya lo tienes y quieres lo último:
+
+```bash
+git pull origin <tu-rama>
+```
