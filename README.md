@@ -1,4 +1,4 @@
-# TradeMorfosis 📈
+# Tradeando 📈
 
 Bitácora de trading construida con **Flask + Bootstrap + JavaScript**, usando **SQLAlchemy** para persistencia.
 
